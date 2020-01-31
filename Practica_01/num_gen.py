@@ -38,7 +38,7 @@ def rand(aux):
     pass
     
         
-directories =["rand_numbers/", "best_case/", "worst_case/" ]
+directories =["rand_case/", "best_case/", "worst_case/" ]
 aux = 1000
 
 for directory in directories:
