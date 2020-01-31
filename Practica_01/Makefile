@@ -1,11 +1,11 @@
 CFLAGS = -O0 -g 
 CC = g++
-NumTest: main.o ordering.o
-		$(CC) $(CFLAGS) -o main main.o ordering.o
+NumTest: main.o sorting.o
+		$(CC) $(CFLAGS) -o main main.o sorting.o
 main.o: main.cpp
 		$(CC) $(CFLAGS) -c main.cpp
-ordering.o: ordering.cpp
-		$(CC) $(CFLAGS) -c ordering.cpp
+sorting.o: sorting.cpp
+		$(CC) $(CFLAGS) -c sorting.cpp
 
 clean:
 	rm -f core *.o

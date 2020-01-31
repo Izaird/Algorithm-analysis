@@ -2,11 +2,15 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <chrono>
 
 class IntList
 {
 private:
     std::vector<int> list;
 public:
-    IntList(std::string file_name);
+    IntList();
+    void setList(std::string file_name);
+    void insertionSort();
+    void bubbleSort();
 };
