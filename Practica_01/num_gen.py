@@ -28,7 +28,7 @@ def worst(aux):
 
 def rand(aux):
     for i in range(1,101):
-        file_name = "rand_numbers/rand_" + str(i) + "000"
+        file_name = "rand_case/rand_" + str(i) + "000"
         file = open(file_name, "w")
         for j in range(0,aux):
             file.write(str(rand_num()) + "\n")
@@ -38,7 +38,7 @@ def rand(aux):
     pass
     
         
-directories =["rand_numbers/", "best_case/", "worst_case/" ]
+directories =["rand_case/", "best_case/", "worst_case/" ]
 aux = 1000
 
 for directory in directories:
