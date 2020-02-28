@@ -3,3 +3,4 @@ Practica_[0-9]*/main
 Practica_01/Part_*/*.o
 Practica_01/Part_*/main
 Practica_01/Part_01/*_case/*
+Practica_02/*_case/*
