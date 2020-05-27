@@ -1,24 +1,32 @@
-class CasillaDeVotacion:
-    
-    def __init__(self, identificador, pais):
-        self._identificador = identificador
-        self._pais = pais
-        self._region = None
+import xlwt
 
-    @property
-    def region(self):
-        return self._region
+x=1
+y=2
+z=3
 
-    @region.setter
-    def region(self, region):
-        if region in self._pais:
-            self._region = region
-        else:
-            raise ValueError(f'La region {region} no esta en la lista')
+list1=[2.34,4.346,4.234]
+
+book = xlwt.Workbook(encoding="utf-8")
+
+sheet1 = book.add_sheet("Sheet 1")
+
+sheet1.write(0, 0, "Display")
+sheet1.write(1, 0, "Dominance")
+sheet1.write(2, 0, "Test")
+
+sheet1.write(0, 1, x)
+sheet1.write(1, 1, y)
+sheet1.write(2, 1, z)
+
+sheet1.write(4, 0, "Stimulus Time")
+sheet1.write(4, 1, "Reaction Time")
+
+i=4
+
+for n in list1:
+    i = i+1
+    sheet1.write(i, 0, n)
 
 
-casilla = CasillaDeVotacion(123,['Mexico','Morelos'])
-print(casilla.region)
-casilla.region = 'Mexico'
-print(casilla.region)
 
+book.save("trial.xls")
