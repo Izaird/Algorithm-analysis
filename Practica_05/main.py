@@ -1,6 +1,5 @@
 from lcs import *
 import time
-import tqdm
 def get_strings(file_name):
     while True:
         try:
