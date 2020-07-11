@@ -32,21 +32,21 @@ def encontrar_cliques(potencial_clique=[], nodos_restantes=[], saltar_nodo=[], p
         print('Este es un clique:', potencial_clique)
         return 1
 
-    found_cliques = 0
+    cliques_encontrados = 0
     for nodo in nodos_restantes:
 
         #Intentamos añadir un nodo al potencial_clique para ver si podemos hacer que funcione.
         nuevo_potencial_clique = potencial_clique + [nodo]
         nuevos_nodos_restantes = [n for n in nodos_restantes if n in nodo.vecinos]
         nuevos_saltar_nodo = [n for n in saltar_nodo if n in nodo.vecinos]
-        found_cliques += encontrar_cliques(nuevo_potencial_clique, nuevos_nodos_restantes, nuevos_saltar_nodo, profundidad + 1)
+        cliques_encontrados += encontrar_cliques(nuevo_potencial_clique, nuevos_nodos_restantes, nuevos_saltar_nodo, profundidad + 1)
 
         """Terminamos de considerar este nodo.  Si hubiera una forma de formar un clique con el, ya 
         hemos descubierto su maximo clique en la llamada recursiva de arriba.  Entonces se puede agregar
         y eliminar de los nodos restantes y se agrega a la lista de saltar nodo."""
         nodos_restantes.remove(nodo)
         saltar_nodo.append(nodo)
-    return found_cliques
+    return cliques_encontrados
 
 
 
