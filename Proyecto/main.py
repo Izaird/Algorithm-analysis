@@ -1,3 +1,6 @@
+cliques = []
+
+
 class Nodo(object):
 
     def __init__(self, nombre):
@@ -27,8 +30,8 @@ def leer_archivo(nombre_archivo):
 
 
 def encontrar_cliques(potencial_clique=[], nodos_restantes=[], saltar_nodo=[], profundidad=0):
-
     if len(nodos_restantes) == 0 and len(saltar_nodo) == 0:
+        cliques.append(potencial_clique)
         print('Este es un clique:', potencial_clique)
         return 1
 
@@ -49,7 +52,15 @@ def encontrar_cliques(potencial_clique=[], nodos_restantes=[], saltar_nodo=[], p
     return cliques_encontrados
 
 
+def FindMaxLength(lst): 
+    maxList = max(lst, key = len) 
+    maxLength = max(map(len, lst)) 
+      
+    return maxList, maxLength 
+  
 
-nodos = leer_archivo("02")
+nodos = leer_archivo("03")
 total_cliques = encontrar_cliques(nodos_restantes=nodos)
 print('Numero de cliques encontrados:', total_cliques)
+
+print(FindMaxLength(cliques))
